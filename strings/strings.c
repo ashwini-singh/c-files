@@ -45,25 +45,15 @@ void reverse_words(char* s) {
 }
 
 // Function that reverses a number 
-int reverse_num(int x) {
-
-	int r = 0, 
-		d = 10, 
-		s = 0; 
-
-	while (x > 0) {
-		int remainder = x % 10; 
-		r = (r * 10) + remainder; 
-		s = 0; 
-
-		// Sets x to one factor of 10 lower 
-		while (x > 10) {
-			x -= d; 
-			s++; 
-		}
-		x = s; 
+int reverse_num(int n) {
+	int reverse = 0; 
+	while (n != 0) {
+		reverse = reverse * 10; 	// Increment reversed number by a factor of 10
+		reverse = reverse + n % 10; 	// Add the current singles digit of x; 
+		x = x / 10; 			// Divide x by a factor of 10. 
 	}
-	return r; 
+	
+	return reverse; 
 }
 
 // Function that converts a str to an integer: 
